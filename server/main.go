@@ -15,9 +15,13 @@ func main() {
 	// 配置静态文件夹路径 第一个参数是api，第二个是文件夹路径
 	router.StaticFS("/static", http.Dir("../client/static"))
 	// 请求
-	router.GET("/sayHello/:name", SayHello)
-	router.GET("/index", Index)
-	router.GET("/hello", Hello)
+	group := router.Group("/")
+	{
+		group.GET("/", Index)
+		group.GET("/index", Index)
+		group.GET("/hello", Hello)
+		group.GET("/sayHello/:name", SayHello)
+	}
 	router.Run(":9090")
 }
 
