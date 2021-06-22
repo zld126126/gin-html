@@ -41,6 +41,6 @@ func Hello(c *gin.Context) {
 //http://localhost:9090/index
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		WEBSITE_TITLE_KEY: WEBSITE_TITLE_VALUE,
+		`WEBSITE_TITLE`: `東の博客`,
 	})
 }
