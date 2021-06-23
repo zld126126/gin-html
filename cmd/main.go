@@ -11,7 +11,7 @@ import (
 func main() {
 	// use union for combin resource
 	var Assets = union.New(map[string]http.FileSystem{
-		"/static": http.Dir("../resources/static"),
+		"/static": http.Dir("../static"),
 	})
 	var fs http.FileSystem = Assets
 	err := vfsgen.Generate(fs, vfsgen.Options{
