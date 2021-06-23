@@ -8,7 +8,6 @@ services:
     container_name: landon_web
     image: landon:v1
     ports:
-      - "8991:8991"
-      - "8992:8992"
+      - "9090:9090"
     networks:
       - basic
